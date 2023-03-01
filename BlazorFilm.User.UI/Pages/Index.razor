@@ -1,0 +1,59 @@
+﻿@page "/"
+@inject IUserService service
+<PageTitle>BlazorFilm</PageTitle>
+<div class="d-flex menu-buttons">
+	<button class="toggle-free-button btn btn-dark rounded-0 @(Free == true ? " free-button-active" : "" )" type="button" onclick="@(()=>ToggleFree(true))">Free</button>
+	<button class="toggle-free-button btn btn-dark rounded-0 @(Free == false ? " free-button-active": "")" type="button" onclick="@(()=>ToggleFree(false))">All</button>
+</div>
+<div class="mt-5">
+@foreach (var genre in GenreList)
+{
+	CurrentFilmsInGenre = 0;
+	FilmsInGenre = genre.Films;
+	@foreach (var film in FilmsInGenre)
+		{
+			int index = FilmList.FindIndex(f => f.Id == film.Id);
+			if (index >= 0) CurrentFilmsInGenre++;
+		}
+		@if (genre.Films.Count != 0 && CurrentFilmsInGenre!=0)
+	{
+		<h3 class="text-light m-3">@genre.Name</h3>
+		<div class="d-flex flex-wrap w-100 genre-container">
+			@foreach (var film in FilmsInGenre)
+			{
+				int index = FilmList.FindIndex(f => f.Id == film.Id);
+				if (index >= 0)
+				{
+					<div class="thumbnail-container">
+						<span class="film-thumbnail-text">@film.Title</span>
+
+						<a href="/film/@FilmList[index].Id" class="w-20 m-3">
+							<img src="https://img.youtube.com/vi/@film.FilmUrl/hqdefault.jpg" class="film-thumbnail" />
+						</a>
+					</div>
+					}
+				}
+		</div>
+	}
+}
+
+</div>
+@code {
+	List<FilmDTO> FilmList { get; set; } = new();
+	List<FilmBaseDTO> FilmsInGenre { get; set; } = new();
+	List<GenreDTO> GenreList { get; set; } = new();
+	bool Free { get; set; } 
+	int CurrentFilmsInGenre = 0;
+
+	protected override async Task OnInitializedAsync()
+	{
+		GenreList = await service.GetGenresAsync();
+		FilmList = await service.GetFilmsAsync(Free);
+	}
+	private async Task ToggleFree(bool free)
+	{
+		Free = free;
+		FilmList = await service.GetFilmsAsync(Free);
+		StateHasChanged();
+	}
+}

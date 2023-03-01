@@ -1,0 +1,78 @@
+﻿@page "/film/{Id:int}"
+@inject NavigationManager navigationManager
+@inject IUserService service;
+
+	<a class="btn btn-light btn-return rounded-circle fw-bolder" href="/" role="button">
+		<span class="oi oi-chevron-left"></span>
+	</a>
+
+
+
+<div class="film-page-container">
+	<div class="d-flex m-4 flex-column film-info">
+		<div class="film-info text-light">
+			<h1 class="film-title fw-bold">@Film.Title</h1>
+			<p class="lead"> @Film.Description</p>
+			<div>
+				<p class="mt-5">Release date: @Film.Released.ToShortDateString()</p>
+				<p>Director: @Film.Director?.Name</p>
+				<p class="fw-bold mt-5">Genres:</p>
+				<ul class="list-unstyled">
+					@foreach (var genre in Film.Genres)
+					{
+						<li>@genre.Name</li>
+					}
+				</ul>
+
+			</div>
+		</div>
+		<div class="d-flex mt-5">
+			
+			@*<button class="btn btn-light">*@
+			<a href="/film/@Film.Id/play" class="link-secondary btn btn-light d-flex align-items-center" id="play-button" role="button">
+				<span class="oi oi-media-play" aria-hidden="true"></span>
+				<p class="play-button-text">PLAY</p>
+			</a>
+			@*</button>*@
+		</div>
+
+	</div>
+	@if (Film.SimilarFilms.Count != 0)
+	{
+		<div class="d-flex flex-column mt-5 m-1 similar-films-container">
+
+			<h3 class="text-light m-3 mb-4 mt-4">Similar films</h3>
+			<div class="d-flex flex-wrap w-100 genre-container">
+				@foreach (var similarFilm in Film.SimilarFilms)
+				{<div class="thumbnail-container">
+						<span class="film-thumbnail-text">@similarFilm.Similar.Title</span>
+
+					<a href="/film/@similarFilm.SimilarFilmId" @onclick="@(()=> Reload(similarFilm.SimilarFilmId))" @onclick:preventDefault class="w-25 m-3">
+
+						<img src="https://img.youtube.com/vi/@similarFilm.Similar.FilmUrl/hqdefault.jpg" class="film-thumbnail" />
+					</a>
+					</div>
+
+				}
+			</div>
+		</div>
+
+	}
+</div>
+<div class="film-page-background" style="background-image: url('https://img.youtube.com/vi/@Film.FilmUrl/hqdefault.jpg');"></div>
+
+@code {
+	[Parameter] public int? Id { get; set; }
+	public FilmDTO Film { get; set; } = new();
+	//public List<FilmDTO> SimilarFilms { get; set; }
+
+	protected override async Task OnInitializedAsync()
+	{
+		Film = await service.SingleFilmAsync($"films/{Id}");
+
+	}
+	private void Reload(int filmId)
+	{
+		navigationManager.NavigateTo($"film/{filmId}", true);
+	}
+}

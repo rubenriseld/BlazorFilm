@@ -1,0 +1,39 @@
+﻿
+<table class="table mt-2">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Films</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in GenreList)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>
+                    @item.Films.Count
+                    @*<ul>
+                        @foreach (var film in item.Films)
+                        {
+                            <li>@film.Title</li>
+                        }
+
+                    </ul>*@
+                </td>
+                <td>
+                    <div class="d-flex me-1 justify-content-end">
+                        <button class="btn btn-outline-primary rounded-0 me-1" @onclick="@(() => OnClick.InvokeAsync(new ClickModel(PageType.Edit, item.Id)))">Edit</button>
+                        <button class="btn btn-outline-danger rounded-0" @onclick="@(() => OnClick.InvokeAsync(new ClickModel(PageType.Delete, item.Id)))">Delete</button>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    [Parameter] public List<GenreDTO> GenreList { get; set; } = new();
+    [Parameter] public EventCallback<ClickModel> OnClick { get; set; }
+}

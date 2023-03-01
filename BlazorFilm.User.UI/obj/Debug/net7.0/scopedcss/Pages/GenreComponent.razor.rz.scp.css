@@ -1,0 +1,20 @@
+/*img {
+    transition: transform .1s ease-out 0.05s;
+    z-index: 5;*/
+    /*transition: z-index .05s ease-out 0.05s;*/
+/*}
+    img:hover {
+        transition: transform .2s 0.7s;
+        transform: scale(1.5);
+    }*/
+
+img[b-79dwqnmtdh] {
+    transition: transform .1s;
+    /*z-index: 5;*/
+    /*transition: z-index .05s ease-out 0.05s;*/
+}
+
+    img:hover[b-79dwqnmtdh] {
+        transition: transform .2s 0.1s;
+        transform: scale(1.3);
+    }

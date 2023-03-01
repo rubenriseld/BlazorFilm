@@ -1,0 +1,77 @@
+﻿@inject IAdminService AdminService
+
+<div class="d-xl-flex justify-content-center">
+	<EditForm Model="@Genre" OnValidSubmit="@OnFormSubmit" class="mb-5 border border-1 border-secondary p-2 w-25">
+		<DataAnnotationsValidator />
+		<h4>@Page Genre</h4>
+		<div class="mb-3">
+
+			@if (Page.Equals(PageType.Delete)) //disable title field if crud-option is delete
+			{
+				<InputText id="name" class="form-control me-2" @bind-Value="Genre.Name" disabled placeholder="Name"></InputText>
+			}
+			else
+			{
+				<InputText id="name" class="form-control me-2" @bind-Value="Genre.Name" placeholder="Name"></InputText>
+			}
+			<ValidationMessage For="@(() => Genre.Name)" />
+		</div>
+		<button type="submit" class="btn btn-@(Page.Equals(PageType.Delete) ? "danger" : "primary") rounded-0">@Page</button>
+	</EditForm>
+</div>
+
+
+@code {
+
+	[Parameter] public GenreDTO Genre { get; set; } = new();
+
+	//List<DirectorDTO> Directors { get; set; } = new();
+	//List<GenreBaseDTO> AllGenres { get; set; } = new();
+
+
+	//List<GenreBaseDTO> OldGenres { get; set; } = new();
+	//GenreDTO OldGenre { get; set; } = new();
+
+	[Parameter] public string Page { get; set; } = string.Empty;
+	[Parameter] public EventCallback<string> OnChange { get; set; } //när något förändrats här i kommer denna triggas för att skicka till huvudkomponenten
+
+	//protected override async Task OnInitializedAsync()
+	//{
+	//	//Directors = await AdminService.GetAsync<DirectorDTO>("directors");
+	//	//AllGenres = await AdminService.GetAsync<GenreBaseDTO>("genres");
+	//}
+	private async Task OnFormSubmit()
+	{
+		try
+		{
+			if (Page.Equals(PageType.Create))
+				await AdminService.CreateAsync<GenreDTO>("genres", Genre);
+			else if (Page.Equals(PageType.Edit))
+				await AdminService.UpdateAsync<GenreDTO>($"genres/{Genre.Id}", Genre);
+			else if (Page.Equals(PageType.Delete))
+				await AdminService.DeleteAsync<GenreDTO>($"genres/{Genre.Id}");
+
+			await OnChange.InvokeAsync("");
+		}
+		catch
+		{
+			await OnChange.InvokeAsync("Couldn't create/edit/delete the genre.");
+		}
+	}
+	//private async Task ToggleGenre(int id)
+	//{
+	//	try
+	//	{
+	//		int index = Genre.Genres.FindIndex(g => g.Id == id);
+	//		if (index >= 0)
+	//		{
+	//			Genre.Genres.RemoveAll(g => g.Id == id);
+	//		}
+	//		else Genre.Genres.Add(AllGenres[id - 1]);
+	//	}
+	//	catch (Exception ex)
+	//	{
+	//		await OnChange.InvokeAsync($"{ex}");
+	//	}
+	//}
+}

@@ -1,0 +1,17 @@
+C:\Users\ruben\source\repos\webutv\BlazorFilm\BlazorFilm.Database\bin\Debug\net7.0\BlazorFilm.Database.deps.json
+C:\Users\ruben\source\repos\webutv\BlazorFilm\BlazorFilm.Database\bin\Debug\net7.0\BlazorFilm.Database.runtimeconfig.json
+C:\Users\ruben\source\repos\webutv\BlazorFilm\BlazorFilm.Database\bin\Debug\net7.0\BlazorFilm.Database.dll
+C:\Users\ruben\source\repos\webutv\BlazorFilm\BlazorFilm.Database\bin\Debug\net7.0\BlazorFilm.Database.pdb
+C:\Users\ruben\source\repos\webutv\BlazorFilm\BlazorFilm.Database\bin\Debug\net7.0\BlazorFilm.Common.dll
+C:\Users\ruben\source\repos\webutv\BlazorFilm\BlazorFilm.Database\bin\Debug\net7.0\BlazorFilm.Common.pdb
+C:\Users\ruben\source\repos\webutv\BlazorFilm\BlazorFilm.Database\obj\Debug\net7.0\BlazorFilm.Database.csproj.AssemblyReference.cache
+C:\Users\ruben\source\repos\webutv\BlazorFilm\BlazorFilm.Database\obj\Debug\net7.0\BlazorFilm.Database.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ruben\source\repos\webutv\BlazorFilm\BlazorFilm.Database\obj\Debug\net7.0\BlazorFilm.Database.AssemblyInfoInputs.cache
+C:\Users\ruben\source\repos\webutv\BlazorFilm\BlazorFilm.Database\obj\Debug\net7.0\BlazorFilm.Database.AssemblyInfo.cs
+C:\Users\ruben\source\repos\webutv\BlazorFilm\BlazorFilm.Database\obj\Debug\net7.0\BlazorFilm.Database.csproj.CoreCompileInputs.cache
+C:\Users\ruben\source\repos\webutv\BlazorFilm\BlazorFilm.Database\obj\Debug\net7.0\BlazorFilm.Database.csproj.CopyComplete
+C:\Users\ruben\source\repos\webutv\BlazorFilm\BlazorFilm.Database\obj\Debug\net7.0\BlazorFilm.Database.dll
+C:\Users\ruben\source\repos\webutv\BlazorFilm\BlazorFilm.Database\obj\Debug\net7.0\refint\BlazorFilm.Database.dll
+C:\Users\ruben\source\repos\webutv\BlazorFilm\BlazorFilm.Database\obj\Debug\net7.0\BlazorFilm.Database.pdb
+C:\Users\ruben\source\repos\webutv\BlazorFilm\BlazorFilm.Database\obj\Debug\net7.0\BlazorFilm.Database.genruntimeconfig.cache
+C:\Users\ruben\source\repos\webutv\BlazorFilm\BlazorFilm.Database\obj\Debug\net7.0\ref\BlazorFilm.Database.dll

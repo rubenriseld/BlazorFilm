@@ -1,0 +1,19 @@
+﻿@page "/film/{Id:int}/play"
+@inject IUserService service
+
+<a class="btn btn-light btn-return rounded-circle fw-bolder" href="/film/@Id" role="button">
+	<span class="oi oi-chevron-left"></span>
+</a>
+<div class="film-container">
+	<iframe class="film-player" src="https://www.youtube.com/embed/@Film.FilmUrl" title="@Film.Title" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe>
+</div>
+
+@code {
+	[Parameter] public int? Id { get; set; }
+	public FilmDTO Film { get; set; } = new();
+
+	protected override async Task OnInitializedAsync()
+	{
+		Film = await service.SingleFilmAsync($"films/{Id}");
+	}
+}

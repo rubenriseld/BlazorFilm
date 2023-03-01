@@ -1,0 +1,9 @@
+.btn-toggle-genre[b-n3hmy2abe6] {/*
+    line-height: 1rem;
+    padding: 0.5rem;*/
+}
+.btn-toggle-similar[b-n3hmy2abe6], .btn-toggle-similar:active[b-n3hmy2abe6]{
+    border:none!important;
+    outline:none!important;
+    box-shadow:none!important;
+}

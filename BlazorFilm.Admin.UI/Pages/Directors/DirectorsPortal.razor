@@ -1,0 +1,65 @@
+﻿@inject IAdminService AdminService;
+@if(!string.IsNullOrEmpty(Alert))
+{
+	<div class="d-flex">
+		<div class="alert alert-danger alert-dismissible fade show" role="alert">
+			<strong>@Alert</strong>
+			<button type="button" @onclick="CloseAlert" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+	</div>
+}
+
+@if (Navigation == PageType.Create)
+{
+	<ChangeDirector Page="@Navigation" OnChange="OnChange"></ChangeDirector>
+}
+@if (Navigation == PageType.Delete || Navigation == PageType.Edit)
+{
+	<ChangeDirector Page="@Navigation" OnChange="OnChange" Director="Director"></ChangeDirector>
+}
+
+<div class="d-flex me-1">
+	<a href="/" class="btn btn-outline-secondary rounded-0 me-1">Home</a>
+	<button type="button" class="btn btn-outline-primary rounded-0 me-1" @onclick="()=>ChangePageType(PageType.Index)">Index</button>
+	<button type="button" class="btn btn-outline-success rounded-0" @onclick="()=>ChangePageType(PageType.Create)">Create</button>
+</div>
+
+<DirectorsIndex OnClick="OnClick" DirectorList="DirectorList"></DirectorsIndex>
+
+@code {
+	public List<DirectorDTO> DirectorList { get; set; } = new();
+	public string Alert { get; set; } = string.Empty;
+	public string Navigation { get; set; } = string.Empty;
+	DirectorDTO Director { get; set; } = new();
+
+	void ChangePageType(string pageType) => Navigation = pageType;
+	void CloseAlert() => Alert = string.Empty;
+
+
+	protected override async Task OnInitializedAsync()
+	{
+		DirectorList = await AdminService.GetAsync<DirectorDTO>("directors");
+	}
+
+	async Task OnClick(ClickModel director)
+	{
+		if (director.PageType.Equals(PageType.Edit) || director.PageType.Equals(PageType.Delete))
+		{
+			Director = await AdminService.SingleAsync<DirectorDTO>($"directors/{director.Id}") ?? new();
+		}
+		ChangePageType(director.PageType);
+	}
+	async Task OnChange(string alert)
+	{
+		try
+		{
+			Alert = alert;
+			DirectorList = await AdminService.GetAsync<DirectorDTO>("directors");
+			ChangePageType(PageType.Index);
+		}
+		catch
+		{
+			Alert = "Couldn't create/edit/delete the director.";
+		}
+	}
+}

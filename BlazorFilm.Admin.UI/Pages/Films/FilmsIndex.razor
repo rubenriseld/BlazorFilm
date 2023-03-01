@@ -1,0 +1,49 @@
+﻿<table class="table mt-2">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Release date</th>
+            <th>Director</th>
+            <th>Genres</th>
+            <th>Similar Films</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in FilmList)
+        {
+            <tr>
+                <td>@item.Title</td>
+                <td>@item.Description.Truncate(50)</td>
+                <td>@item.Released.ToString("MMMM dd, yyyy")</td>
+                <td>@item.Director.Name</td>
+                <td>
+                    <ul class="list-group list-group-flush">
+                        @foreach (var genre in item.Genres.OrderBy(g => g.Name))
+                        {
+                            <li class="list-group-item genre-list-group-item">@genre.Name</li>
+                        }</ul>
+                </td>
+                    <td>
+                    <ul class="list-group list-group-flush">
+                        @foreach (var film in item.SimilarFilms)
+                        {
+                                <li class="list-group-item genre-list-group-item">@film.Similar.Title</li>
+                        }</ul>
+                </td>
+                <td>
+                    <div class="d-flex me-1 justify-content-end">
+                        <button class="btn btn-outline-primary rounded-0 me-1" @onclick="@(() => OnClick.InvokeAsync(new ClickModel(PageType.Edit, item.Id)))">Edit</button>
+                        <button class="btn btn-outline-danger rounded-0" @onclick="@(() => OnClick.InvokeAsync(new ClickModel(PageType.Delete, item.Id)))">Delete</button>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    [Parameter] public List<FilmDTO> FilmList { get; set; } = new();
+    [Parameter] public EventCallback<ClickModel> OnClick { get; set; } //[Parameter] och public för att kunna skicka till annan komponent
+}

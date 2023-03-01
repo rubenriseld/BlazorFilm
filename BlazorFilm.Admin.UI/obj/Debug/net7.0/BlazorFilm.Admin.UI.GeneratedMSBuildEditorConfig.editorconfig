@@ -1,0 +1,89 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = BlazorFilm.Admin.UI
+build_property.RootNamespace = BlazorFilm.Admin.UI
+build_property.ProjectDir = C:\Users\ruben\source\repos\webutv\BlazorFilm\BlazorFilm.Admin.UI\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\ruben\source\repos\webutv\BlazorFilm\BlazorFilm.Admin.UI
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/ruben/source/repos/webutv/BlazorFilm/BlazorFilm.Admin.UI/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ruben/source/repos/webutv/BlazorFilm/BlazorFilm.Admin.UI/Pages/Directors/ChangeDirector.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGlyZWN0b3JzXENoYW5nZURpcmVjdG9yLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ruben/source/repos/webutv/BlazorFilm/BlazorFilm.Admin.UI/Pages/Directors/DirectorsIndex.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGlyZWN0b3JzXERpcmVjdG9yc0luZGV4LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ruben/source/repos/webutv/BlazorFilm/BlazorFilm.Admin.UI/Pages/Directors/DirectorsPortal.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGlyZWN0b3JzXERpcmVjdG9yc1BvcnRhbC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ruben/source/repos/webutv/BlazorFilm/BlazorFilm.Admin.UI/Pages/Films/FilmsPortal.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmlsbXNcRmlsbXNQb3J0YWwucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ruben/source/repos/webutv/BlazorFilm/BlazorFilm.Admin.UI/Pages/Genres/ChangeGenre.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2VucmVzXENoYW5nZUdlbnJlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ruben/source/repos/webutv/BlazorFilm/BlazorFilm.Admin.UI/Pages/Genres/GenresIndex.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2VucmVzXEdlbnJlc0luZGV4LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ruben/source/repos/webutv/BlazorFilm/BlazorFilm.Admin.UI/Pages/Genres/GenresPortal.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2VucmVzXEdlbnJlc1BvcnRhbC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ruben/source/repos/webutv/BlazorFilm/BlazorFilm.Admin.UI/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ruben/source/repos/webutv/BlazorFilm/BlazorFilm.Admin.UI/Pages/Portal.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9ydGFsLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ruben/source/repos/webutv/BlazorFilm/BlazorFilm.Admin.UI/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ruben/source/repos/webutv/BlazorFilm/BlazorFilm.Admin.UI/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ruben/source/repos/webutv/BlazorFilm/BlazorFilm.Admin.UI/Pages/Films/ChangeFilm.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmlsbXNcQ2hhbmdlRmlsbS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-n3hmy2abe6
+
+[C:/Users/ruben/source/repos/webutv/BlazorFilm/BlazorFilm.Admin.UI/Pages/Films/FilmsIndex.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmlsbXNcRmlsbXNJbmRleC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-ce54qbnir4
+
+[C:/Users/ruben/source/repos/webutv/BlazorFilm/BlazorFilm.Admin.UI/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-dhd0thu7wb
+
+[C:/Users/ruben/source/repos/webutv/BlazorFilm/BlazorFilm.Admin.UI/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-wwlj4h5mtj
+
+[C:/Users/ruben/source/repos/webutv/BlazorFilm/BlazorFilm.Admin.UI/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ruben/source/repos/webutv/BlazorFilm/BlazorFilm.Admin.UI/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 

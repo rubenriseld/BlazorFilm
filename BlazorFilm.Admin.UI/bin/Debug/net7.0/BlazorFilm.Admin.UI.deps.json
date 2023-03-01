@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "BlazorFilm.Admin.UI/1.0.0": {
+        "dependencies": {
+          "BlazorFilm.Common": "1.0.0"
+        },
+        "runtime": {
+          "BlazorFilm.Admin.UI.dll": {}
+        }
+      },
+      "BlazorFilm.Common/1.0.0": {
+        "runtime": {
+          "BlazorFilm.Common.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "BlazorFilm.Admin.UI/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BlazorFilm.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
